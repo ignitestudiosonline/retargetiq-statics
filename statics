@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retarget IQ — Static Ad Creatives</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  .ad-wrapper { position: relative; display: inline-block; }
+  .download-btn {
+    position: absolute;
+    top: 28px; right: 6px;
+    background: rgba(0,0,0,0.88);
+    color: #FFE034;
+    border: 1.5px solid #FFE034;
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 10px; cursor: pointer;
+    z-index: 100; opacity: 0;
+    transition: opacity 0.2s; white-space: nowrap;
+  }
+  .ad-wrapper:hover .download-btn { opacity: 1; }
+  .download-btn:hover { background: #FFE034; color: #000; }
+</style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --yellow: #FFE034;
+    --red: #FF3B3B;
+    --blue: #1AAFFF;
+    --gray: #1a1a1a;
+    --mid: #2a2a2a;
+  }
+
+  body {
+    background: #111;
+    font-family: 'Barlow', sans-serif;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--yellow);
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 40px;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  .section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--blue);
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin: 50px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--mid);
+  }
+
+  .ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .format-label {
+    color: #555;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ===================== */
+  /* AD BASE STYLES        */
+  /* ===================== */
+
+  .ad {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ad-1x1 { width: 340px; min-height: 340px; height: auto; }
+  .ad-9x16 { width: 220px; min-height: 391px; height: auto; }
+
+  /* ===================== */
+  /* BODY 1 — VISITOR ID   */
+  /* ===================== */
+
+  /* Ad 1.1 */
+  .b1-ad1 {
+    background: var(--black);
+    border: 3px solid var(--yellow);
+    padding: 28px;
+  }
+  .b1-ad1 .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .b1-ad1 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+  .b1-ad1 .headline span { color: var(--yellow); }
+  .b1-ad1 .stat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #aaa;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .b1-ad1 .cta-btn {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  .b1-ad1 .noise {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Ad 1.2 */
+  .b1-ad2 {
+    background: var(--white);
+    padding: 0;
+    position: relative;
+  }
+  .b1-ad2 .top-bar {
+    background: var(--red);
+    padding: 12px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+  .b1-ad2 .content {
+    padding: 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .b1-ad2 .big-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 110px;
+    line-height: 0.85;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+  .b1-ad2 .big-number span { color: var(--red); }
+  .b1-ad2 .sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .b1-ad2 .cta-btn {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  /* Ad 1.3 */
+  .b1-ad3 {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a00 100%);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b1-ad3::before {
+    content: '97%';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 160px;
+    color: rgba(255,224,52,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .b1-ad3 .tag {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+  .b1-ad3 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 46px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .b1-ad3 .headline span { color: var(--yellow); }
+  .b1-ad3 .body-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+  .b1-ad3 .cta-btn {
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 11px 20px;
+    text-align: center;
+  }
+
+  /* Ad 1.4 */
+  .b1-ad4 {
+    background: var(--black);
+    padding: 0;
+    position: relative;
+  }
+  .b1-ad4 .accent-bar {
+    width: 6px;
+    background: var(--yellow);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .b1-ad4 .content {
+    padding: 26px 26px 26px 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .b1-ad4 .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--yellow);
+    text-transform: uppercase;
+  }
+  .b1-ad4 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+  }
+  .b1-ad4 .headline span { color: var(--yellow); }
+  .b1-ad4 .divider {
+    height: 2px;
+    background: var(--mid);
+    margin: 12px 0;
+  }
+  .b1-ad4 .sub {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.5;
+    font-family: 'Barlow', sans-serif;
+  }
+  .b1-ad4 .cta-btn {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* Ad 1.5 */
+  .b1-ad5 {
+    background: var(--red);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b1-ad5::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    border: 30px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
+  }
+  .b1-ad5 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 54px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .b1-ad5 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+  }
+  .b1-ad5 .cta-btn {
+    background: var(--white);
+    color: var(--red);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===================== */
+  /* BODY 2 — AUDIENCE     */
+  /* ===================== */
+
+  /* Ad 2.1 */
+  .b2-ad1 {
+    background: #050510;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b2-ad1::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(26,175,255,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .b2-ad1 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad1 .headline span { color: var(--blue); }
+  .b2-ad1 .stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad1 .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .b2-ad1 .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--blue);
+    min-width: 70px;
+  }
+  .b2-ad1 .stat-label {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #888;
+    line-height: 1.3;
+  }
+  .b2-ad1 .cta-btn {
+    background: var(--blue);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 2.2 */
+  .b2-ad2 {
+    background: var(--white);
+    padding: 0;
+    position: relative;
+  }
+  .b2-ad2 .stripe {
+    background: var(--black);
+    padding: 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .b2-ad2 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 46px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .b2-ad2 .headline span { color: var(--yellow); }
+  .b2-ad2 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  .b2-ad2 .bottom {
+    background: var(--yellow);
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .b2-ad2 .bottom-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .b2-ad2 .arrow {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--black);
+  }
+
+  /* Ad 2.3 */
+  .b2-ad3 {
+    background: var(--black);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b2-ad3 .grid-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+  .b2-ad3 .tag {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad3 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad3 .headline span { color: var(--yellow); }
+  .b2-ad3 .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad3 .filter-chip {
+    border: 1px solid #444;
+    color: #bbb;
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 9px;
+    text-transform: uppercase;
+  }
+  .b2-ad3 .filter-chip.active {
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+  .b2-ad3 .cta-btn {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 2.4 */
+  .b2-ad4 {
+    background: linear-gradient(160deg, #0d1117 0%, #0a0a2a 100%);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b2-ad4 .big-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 0.85;
+    color: var(--white);
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad4 .big-text span { color: var(--blue); }
+  .b2-ad4 .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad4 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad4 .cta-btn {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 11px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 2.5 */
+  .b2-ad5 {
+    background: var(--yellow);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b2-ad5::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 200px; height: 200px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 50%;
+  }
+  .b2-ad5 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 0.95;
+    color: var(--black);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad5 .points {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b2-ad5 .point {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .b2-ad5 .point::before {
+    content: '→';
+    font-size: 14px;
+    font-weight: 900;
+  }
+  .b2-ad5 .cta-btn {
+    background: var(--black);
+    color: var(--yellow);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===================== */
+  /* BODY 3 — ANY CAMPAIGN */
+  /* ===================== */
+
+  /* Ad 3.1 */
+  .b3-ad1 {
+    background: var(--black);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b3-ad1 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .b3-ad1 .headline span { color: var(--yellow); }
+  .b3-ad1 .integrations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b3-ad1 .int-chip {
+    background: var(--mid);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border-left: 3px solid var(--yellow);
+  }
+  .b3-ad1 .cta-btn {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 3.2 */
+  .b3-ad2 {
+    background: var(--white);
+    padding: 26px;
+    position: relative;
+  }
+  .b3-ad2 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 0.95;
+    color: var(--black);
+    margin-bottom: 14px;
+  }
+  .b3-ad2 .headline span { color: var(--red); }
+  .b3-ad2 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .b3-ad2 .channels {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .b3-ad2 .channel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .b3-ad2 .channel-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .b3-ad2 .cta-btn {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  /* Ad 3.3 */
+  .b3-ad3 {
+    background: linear-gradient(145deg, #0a0a0a, #0f0f1f);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b3-ad3 .accent-line {
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--yellow));
+    margin-bottom: 22px;
+  }
+  .b3-ad3 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .b3-ad3 .headline span { color: var(--blue); }
+  .b3-ad3 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+  }
+  .b3-ad3 .cta-btn {
+    background: linear-gradient(90deg, var(--blue), #0077cc);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 3.4 */
+  .b3-ad4 {
+    background: var(--black);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .b3-ad4 .top {
+    padding: 22px 22px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .b3-ad4 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .b3-ad4 .headline span { color: var(--yellow); }
+  .b3-ad4 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.5;
+  }
+  .b3-ad4 .bottom-strip {
+    background: var(--yellow);
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .b3-ad4 .bottom-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--black);
+    letter-spacing: 2px;
+  }
+  .b3-ad4 .bottom-arrow {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--black);
+  }
+
+  /* Ad 3.5 */
+  .b3-ad5 {
+    background: var(--red);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b3-ad5::before {
+    content: '';
+    position: absolute;
+    top: -50px; left: -50px;
+    width: 250px; height: 250px;
+    border: 40px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .b3-ad5 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .b3-ad5 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+  }
+  .b3-ad5 .cta-btn {
+    background: var(--white);
+    color: var(--red);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===================== */
+  /* BODY 4 — INTEGRATIONS */
+  /* ===================== */
+
+  /* Ad 4.1 */
+  .b4-ad1 {
+    background: var(--black);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b4-ad1::after {
+    content: '⚡';
+    position: absolute;
+    right: 10px; bottom: 60px;
+    font-size: 120px;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+  .b4-ad1 .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .b4-ad1 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad1 .headline span { color: var(--yellow); }
+  .b4-ad1 .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad1 .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .b4-ad1 .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--yellow);
+    min-width: 20px;
+    line-height: 1.2;
+  }
+  .b4-ad1 .step-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    color: #bbb;
+    line-height: 1.4;
+  }
+  .b4-ad1 .cta-btn {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 4.2 */
+  .b4-ad2 {
+    background: var(--white);
+    padding: 26px;
+    position: relative;
+  }
+  .b4-ad2 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  .b4-ad2 .headline span { color: var(--red); }
+  .b4-ad2 .comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .b4-ad2 .comp-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .b4-ad2 .comp-bad {
+    color: #bbb;
+    text-decoration: line-through;
+  }
+  .b4-ad2 .comp-good {
+    color: var(--black);
+  }
+  .b4-ad2 .comp-icon-bad { color: #ccc; font-size: 14px; }
+  .b4-ad2 .comp-icon-good { color: var(--red); font-size: 14px; }
+  .b4-ad2 .cta-btn {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  /* Ad 4.3 */
+  .b4-ad3 {
+    background: #050510;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b4-ad3::before {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(26,175,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .b4-ad3 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad3 .headline span { color: var(--blue); }
+  .b4-ad3 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad3 .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad3 .feature {
+    font-family: 'Barlow', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .b4-ad3 .feature::before { content: '✓  '; }
+  .b4-ad3 .cta-btn {
+    background: var(--blue);
+    color: var(--black);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 4.4 */
+  .b4-ad4 {
+    background: var(--yellow);
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .b4-ad4::after {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border: 35px solid rgba(0,0,0,0.08);
+    border-radius: 50%;
+  }
+  .b4-ad4 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 0.95;
+    color: var(--black);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad4 .sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    color: rgba(0,0,0,0.7);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .b4-ad4 .cta-btn {
+    background: var(--black);
+    color: var(--yellow);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Ad 4.5 */
+  .b4-ad5 {
+    background: var(--black);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .b4-ad5 .left-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, var(--blue), var(--yellow));
+  }
+  .b4-ad5 .content {
+    padding: 24px 24px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .b4-ad5 .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #555;
+    text-transform: uppercase;
+  }
+  .b4-ad5 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 0.95;
+    color: var(--white);
+  }
+  .b4-ad5 .headline span { color: var(--blue); }
+  .b4-ad5 .sub {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    font-family: 'Barlow', sans-serif;
+    margin-top: 10px;
+  }
+  .b4-ad5 .cta-btn {
+    background: var(--blue);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* 9x16 VERSIONS — same designs, scaled for vertical */
+  .ad-9x16 .b1-ad1,
+  .ad-9x16.b1-ad1 { font-size: 90%; }
+
+
+  /* ===================== */
+  /* GLOBAL SAFETY FIXES   */
+  /* Stripe/split layout fixes */
+  .b1-ad2 { display: flex; flex-direction: column; }
+  .b2-ad2 { display: flex; flex-direction: column; }
+  .b3-ad4 { display: flex; flex-direction: column; }
+  .b4-ad5 { display: flex; flex-direction: column; }
+
+  .b1-ad4 .content,
+  .b4-ad5 .content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  /* b2-ad2 stripe fills remaining space */
+  .b2-ad2 .stripe { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .b3-ad4 .top { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+  /* Make sure all ads with space-between actually have content pushing CTA down */
+  .b1-ad3, .b1-ad5, .b2-ad1, .b2-ad3, .b2-ad4, .b2-ad5,
+  .b3-ad1, .b3-ad3, .b3-ad5, .b4-ad1, .b4-ad3, .b4-ad4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* ===================== */
+  .ad {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .ad-1x1 { width: 340px; min-height: 340px; padding-bottom: 0; }
+  .ad-9x16 { width: 220px; min-height: 391px; padding-bottom: 0; }
+
+  /* All CTA buttons pinned to bottom */
+  .ad > .cta-btn,
+  .ad > div > .cta-btn {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+
+  /* Prevent huge decorative pseudo-elements from causing scroll */
+  .ad::before, .ad::after { pointer-events: none; }
+
+  /* Headline font sizes — prevent overflow on small 9x16 */
+  .ad-9x16 .headline { word-break: break-word; }
+
+
+  /* ===================== */
+  /* META SAFE ZONE FIXES  */
+  /* ===================== */
+
+  /* All ads get minimum 20px safe padding on all sides */
+  .ad-1x1 { padding: 24px !important; }
+  .ad-9x16 { padding: 20px !important; }
+
+  /* Override any zero-padding ads that use inner .content divs */
+  .b1-ad4 { padding: 0 !important; }
+  .b1-ad2 { padding: 0 !important; }
+  .b2-ad2 { padding: 0 !important; }
+  .b3-ad4 { padding: 0 !important; }
+  .b4-ad5 { padding: 0 !important; }
+
+  /* Inner content divs on zero-padding ads get the safe zone instead */
+  .b1-ad4 .content { padding: 24px 24px 24px 30px; }
+  .b1-ad2 .content { padding: 18px 22px 22px; }
+  .b2-ad2 .stripe { padding: 22px 22px 18px; }
+  .b3-ad4 .top { padding: 22px 22px 14px; }
+  .b4-ad5 .content { padding: 22px 22px 22px 28px; }
+
+  /* CTA buttons always have bottom breathing room */
+  .ad > .cta-btn { margin-top: auto; margin-bottom: 0; flex-shrink: 0; }
+
+  /* Bottom strip CTAs (b2-ad2, b3-ad4) get safe padding */
+  .b2-ad2 .bottom { padding: 16px 22px; flex-shrink: 0; }
+  .b3-ad4 .bottom-strip { padding: 16px 22px; flex-shrink: 0; }
+
+  /* Red ad (b1-ad5) has enough internal padding */
+  .b1-ad5 { padding: 28px 28px 28px 28px !important; }
+  .b2-ad5 { padding: 26px 26px 26px 26px !important; }
+  .b3-ad5 { padding: 26px 26px 26px 26px !important; }
+  .b4-ad4 { padding: 26px 26px 26px 26px !important; }
+
+  /* Reduce font sizes slightly on ads where content is too tall */
+  .ad-9x16 .headline { font-size: clamp(28px, 9vw, 44px); }
+  .ad-1x1 .headline { font-size: clamp(32px, 8vw, 54px); }
+
+  /* Ensure nothing gets cut by overflow:hidden */
+  .ad { overflow: visible !important; }
+  .ad-1x1, .ad-9x16 { overflow: hidden !important; }
+
+  .vertical-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+</style>
+</head>
+<body>
+
+<style>
+  .safe-zone-toggle {
+    position: fixed;
+    top: 20px; right: 20px;
+    background: #FFE034;
+    color: #000;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    z-index: 9999;
+  }
+  .show-safe-zones .ad-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    border: 2px dashed rgba(255, 100, 100, 0.6);
+    pointer-events: none;
+    z-index: 999;
+  }
+</style>
+<button class="safe-zone-toggle" onclick="document.body.classList.toggle('show-safe-zones')">
+  Toggle Safe Zones
+</button>
+
+
+<h1>RETARGET IQ — STATIC AD CREATIVES</h1>
+<p class="subtitle">20 ads across 4 bodies × 5 designs × 2 formats (1:1 and 9:16)</p>
+
+<!-- ======================== -->
+<!-- BODY 1: VISITOR ID       -->
+<!-- ======================== -->
+<div class="section-label">BODY 1 — VISITOR IDENTIFICATION</div>
+
+<div class="ads-grid">
+
+  <!-- 1.1 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b1-ad1">
+      <div class="noise"></div>
+      <div class="eyebrow">Retarget IQ</div>
+      <div class="headline">YOUR VISITORS<br>ARE <span>GHOSTS.</span><br>NOT ANYMORE.</div>
+      <div class="stat">97% of website visitors leave<br>without converting. We identify 70% of them.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.1 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b1-ad1" style="font-size:85%;">
+      <div class="noise"></div>
+      <div class="eyebrow">Retarget IQ</div>
+      <div class="headline" style="font-size:31px;">YOUR VISITORS<br>ARE <span>GHOSTS.</span><br>NOT ANYMORE.</div>
+      <div class="stat" style="font-size:11px;">97% of website visitors leave without converting.<br>We identify 70% of them.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.2 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b1-ad2" style="display:flex;flex-direction:column;">
+      <div class="top-bar">RETARGET IQ — VISITOR ID</div>
+      <div class="content">
+        <div class="big-number"><span>97</span>%</div>
+        <div class="sub">OF YOUR VISITORS<br>DISAPPEAR FOREVER.<br>WE FIX THAT.</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.2 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b1-ad2" style="display:flex;flex-direction:column;">
+      <div class="top-bar" style="font-size:13px;">RETARGET IQ</div>
+      <div class="content">
+        <div class="big-number" style="font-size:80px;"><span>97</span>%</div>
+        <div class="sub" style="font-size:13px;">OF YOUR VISITORS<br>DISAPPEAR FOREVER.<br>WE FIX THAT.</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.3 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b1-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <div class="tag">Visitor Identification</div>
+        <div class="headline">SOMEONE JUST<br>LEFT YOUR SITE.<br>WE KNOW <span>WHO.</span></div>
+      </div>
+      <div class="body-text">Real names. Contact info. Pages they visited.<br>Follow up before they find your competitor.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.3 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b1-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <div class="tag">Visitor ID</div>
+        <div class="headline" style="font-size:38px;">SOMEONE JUST<br>LEFT YOUR SITE.<br>WE KNOW <span>WHO.</span></div>
+      </div>
+      <div class="body-text" style="font-size:11px;">Real names. Contact info.<br>Follow up before they find your competitor.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.4 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b1-ad4">
+      <div class="accent-bar"></div>
+      <div class="content">
+        <div class="brand">Retarget IQ</div>
+        <div>
+          <div class="headline">THAT WARM<br>TRAFFIC?<br>YOU'RE <span>MISSING</span><br>ALL OF IT.</div>
+          <div class="divider"></div>
+          <div class="sub">Identify up to 70% of anonymous visitors — names, emails, and what pages they browsed.</div>
+        </div>
+        <div class="cta-btn">BOOK A DEMO →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.4 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b1-ad4">
+      <div class="accent-bar"></div>
+      <div class="content">
+        <div class="brand">Retarget IQ</div>
+        <div>
+          <div class="headline" style="font-size:38px;">THAT WARM<br>TRAFFIC?<br>YOU'RE <span>MISSING</span><br>ALL OF IT.</div>
+          <div class="divider"></div>
+          <div class="sub" style="font-size:11px;">Identify up to 70% of anonymous visitors.</div>
+        </div>
+        <div class="cta-btn">BOOK A DEMO →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1.5 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b1-ad5" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">YOUR SITE<br>VISITORS ARE<br>ALREADY THERE.<br>NOW USE THEM.</div>
+      <div class="sub">Most businesses let 97% of their traffic walk out the door. Retarget IQ identifies who they are — automatically.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 1.5 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b1-ad5" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:28px;">YOUR SITE<br>VISITORS ARE<br>ALREADY THERE.<br>NOW USE THEM.</div>
+      <div class="sub" style="font-size:11px;">Most businesses let 97% of their traffic walk out the door. We identify who they are.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======================== -->
+<!-- BODY 2: AUDIENCE BUILDER -->
+<!-- ======================== -->
+<div class="section-label">BODY 2 — AUDIENCE BUILDER</div>
+
+<div class="ads-grid">
+
+  <!-- 2.1 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b2-ad1" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">FIND YOUR<br>NEXT <span>BUYER.</span><br>RIGHT NOW.</div>
+      <div class="stats">
+        <div class="stat-row"><div class="stat-num">220M</div><div class="stat-label">Consumer profiles, queryable on demand</div></div>
+        <div class="stat-row"><div class="stat-num">140M</div><div class="stat-label">Business profiles, filtered by intent</div></div>
+        <div class="stat-row"><div class="stat-num">30K+</div><div class="stat-label">Buyer intent categories, updated daily</div></div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.1 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b2-ad1" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:36px;">FIND YOUR<br>NEXT <span>BUYER.</span><br>RIGHT NOW.</div>
+      <div class="stats">
+        <div class="stat-row"><div class="stat-num" style="font-size:17px;">220M</div><div class="stat-label" style="font-size:10px;">Consumer profiles</div></div>
+        <div class="stat-row"><div class="stat-num" style="font-size:17px;">140M</div><div class="stat-label" style="font-size:10px;">Business profiles</div></div>
+        <div class="stat-row"><div class="stat-num" style="font-size:17px;">30K+</div><div class="stat-label" style="font-size:10px;">Intent categories daily</div></div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.2 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b2-ad2" style="display:flex;flex-direction:column;">
+      <div class="stripe" style="flex:1;">
+        <div class="headline">STOP GUESSING<br>WHO WANTS<br>TO <span>BUY.</span></div>
+        <div class="sub">Query 360M+ verified profiles filtered by real-time buying intent. No brokers. No waiting. No stale data.</div>
+      </div>
+      <div class="bottom">
+        <div class="bottom-text">BOOK A DEMO TODAY</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.2 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b2-ad2" style="display:flex;flex-direction:column;">
+      <div class="stripe" style="flex:1;">
+        <div class="headline" style="font-size:36px;">STOP GUESSING<br>WHO WANTS<br>TO <span>BUY.</span></div>
+        <div class="sub" style="font-size:11px;">Query 360M+ verified profiles filtered by real-time buying intent.</div>
+      </div>
+      <div class="bottom">
+        <div class="bottom-text" style="font-size:11px;">BOOK A DEMO</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.3 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b2-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="grid-bg"></div>
+      <div>
+        <div class="tag">Audience Builder</div>
+        <div class="headline">BUILD YOUR<br>AUDIENCE IN<br><span>MINUTES.</span></div>
+      </div>
+      <div class="filters">
+        <div class="filter-chip active">Intent</div>
+        <div class="filter-chip active">Industry</div>
+        <div class="filter-chip active">Location</div>
+        <div class="filter-chip">Income</div>
+        <div class="filter-chip">B2B/B2C</div>
+        <div class="filter-chip">+ More</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.3 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b2-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="grid-bg"></div>
+      <div>
+        <div class="tag">Audience Builder</div>
+        <div class="headline" style="font-size:38px;">BUILD YOUR<br>AUDIENCE IN<br><span>MINUTES.</span></div>
+      </div>
+      <div class="filters">
+        <div class="filter-chip active">Intent</div>
+        <div class="filter-chip active">Industry</div>
+        <div class="filter-chip active">Location</div>
+        <div class="filter-chip">Income</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.4 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b2-ad4" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <div class="big-text"><span>360</span>M+</div>
+        <div class="label">Verified Profiles</div>
+      </div>
+      <div class="sub">Filter by industry, location, buying intent, income — and get a list of people actively looking to buy right now. Not last year. Right now.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.4 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b2-ad4" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <div class="big-text" style="font-size:60px;"><span>360</span>M+</div>
+        <div class="label" style="font-size:12px;">Verified Profiles</div>
+      </div>
+      <div class="sub" style="font-size:11px;">Filter by intent, industry, location — get buyers who are looking right now.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.5 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b2-ad5" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">NO BROKERS.<br>NO WAITING.<br>NO STALE DATA.</div>
+      <div class="points">
+        <div class="point">Query 220M consumer profiles</div>
+        <div class="point">140M business profiles</div>
+        <div class="point">30K+ intent categories daily</div>
+        <div class="point">Push live to Meta, Google, CRM</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 2.5 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b2-ad5" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:38px;">NO BROKERS.<br>NO WAITING.<br>NO STALE DATA.</div>
+      <div class="points">
+        <div class="point" style="font-size:10px;">Query 220M consumer profiles</div>
+        <div class="point" style="font-size:10px;">140M business profiles</div>
+        <div class="point" style="font-size:10px;">30K+ intent categories daily</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======================== -->
+<!-- BODY 3: ANY CAMPAIGN     -->
+<!-- ======================== -->
+<div class="section-label">BODY 3 — WORKS WITH ANY CAMPAIGN</div>
+
+<div class="ads-grid">
+
+  <!-- 3.1 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b3-ad1" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">WHATEVER<br>YOU'RE RUNNING,<br>THIS <span>PLUGS IN.</span></div>
+      <div class="integrations">
+        <div class="int-chip">Meta</div>
+        <div class="int-chip">Google</div>
+        <div class="int-chip">HubSpot</div>
+        <div class="int-chip">Salesforce</div>
+        <div class="int-chip">GoHighLevel</div>
+        <div class="int-chip">+200 More</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.1 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b3-ad1" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:36px;">WHATEVER<br>YOU'RE RUNNING,<br>THIS <span>PLUGS IN.</span></div>
+      <div class="integrations">
+        <div class="int-chip">Meta</div>
+        <div class="int-chip">Google</div>
+        <div class="int-chip">HubSpot</div>
+        <div class="int-chip">+200</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.2 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b3-ad2" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">ONE<br>PLATFORM.<br>EVERY <span>CHANNEL.</span></div>
+      <div class="channels">
+        <div class="channel"><div class="channel-dot"></div>Paid Ads (Meta + Google)</div>
+        <div class="channel"><div class="channel-dot"></div>Cold Email Outreach</div>
+        <div class="channel"><div class="channel-dot"></div>Direct Mail Campaigns</div>
+        <div class="channel"><div class="channel-dot"></div>CRM + Sales Pipelines</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.2 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b3-ad2" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:36px;">ONE<br>PLATFORM.<br>EVERY <span>CHANNEL.</span></div>
+      <div class="channels">
+        <div class="channel" style="font-size:10px;"><div class="channel-dot"></div>Paid Ads</div>
+        <div class="channel" style="font-size:10px;"><div class="channel-dot"></div>Cold Email</div>
+        <div class="channel" style="font-size:10px;"><div class="channel-dot"></div>Direct Mail</div>
+        <div class="channel" style="font-size:10px;"><div class="channel-dot"></div>CRM Sync</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.3 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b3-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="accent-line"></div>
+      <div class="headline">YOUR ADS.<br>YOUR EMAILS.<br>YOUR MAIL.<br><span>ALL BETTER.</span></div>
+      <div class="sub">One data source powering every channel you're already running. Intent-verified audiences synced in real time.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.3 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b3-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="accent-line"></div>
+      <div class="headline" style="font-size:36px;">YOUR ADS.<br>YOUR EMAILS.<br>YOUR MAIL.<br><span>ALL BETTER.</span></div>
+      <div class="sub" style="font-size:11px;">One data source powering every channel you run.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.4 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b3-ad4" style="display:flex;flex-direction:column;">
+      <div class="top" style="flex:1;">
+        <div class="headline">YOUR DATA.<br>YOUR TOOLS.<br><span>FINALLY</span><br>TALKING.</div>
+        <div class="sub">Audience syncs in real time — no manual uploads, no spreadsheets, no back-and-forth with dev.</div>
+      </div>
+      <div class="bottom-strip">
+        <div class="bottom-text">BOOK A DEMO</div>
+        <div class="bottom-arrow">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.4 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b3-ad4" style="display:flex;flex-direction:column;">
+      <div class="top" style="flex:1;">
+        <div class="headline" style="font-size:36px;">YOUR DATA.<br>YOUR TOOLS.<br><span>FINALLY</span><br>TALKING.</div>
+        <div class="sub" style="font-size:11px;">Syncs in real time. No manual uploads.</div>
+      </div>
+      <div class="bottom-strip">
+        <div class="bottom-text" style="font-size:15px;">BOOK A DEMO</div>
+        <div class="bottom-arrow">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3.5 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b3-ad5" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">COLD EMAIL.<br>PAID ADS.<br>DIRECT MAIL.<br>WE RUN WITH ALL OF IT.</div>
+      <div class="sub">200+ integrations. One platform. Every campaign you're already running just got a whole lot smarter.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 3.5 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b3-ad5" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:36px;">COLD EMAIL.<br>PAID ADS.<br>DIRECT MAIL.<br>ALL OF IT.</div>
+      <div class="sub" style="font-size:11px;">200+ integrations. One platform. Every campaign smarter.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ======================== -->
+<!-- BODY 4: INTEGRATIONS     -->
+<!-- ======================== -->
+<div class="section-label">BODY 4 — DIRECT INTEGRATIONS / AD PERFORMANCE</div>
+
+<div class="ads-grid">
+
+  <!-- 4.1 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b4-ad1" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="eyebrow">How It Works</div>
+      <div class="headline">GOOD DATA.<br><span>LIVE</span> IN YOUR<br>TOOLS. DONE.</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1.</div><div class="step-text">Build your intent-verified audience</div></div>
+        <div class="step"><div class="step-num">2.</div><div class="step-text">Hit sync — pushes to Meta, Google, or CRM</div></div>
+        <div class="step"><div class="step-num">3.</div><div class="step-text">Campaign goes live. That's it.</div></div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.1 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b4-ad1" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="eyebrow" style="font-size:9px;">How It Works</div>
+      <div class="headline" style="font-size:36px;">GOOD DATA.<br><span>LIVE</span> IN YOUR<br>TOOLS. DONE.</div>
+      <div class="steps">
+        <div class="step"><div class="step-num" style="font-size:14px;">1.</div><div class="step-text" style="font-size:10px;">Build your intent-verified audience</div></div>
+        <div class="step"><div class="step-num" style="font-size:14px;">2.</div><div class="step-text" style="font-size:10px;">Hit sync — pushes live instantly</div></div>
+        <div class="step"><div class="step-num" style="font-size:14px;">3.</div><div class="step-text" style="font-size:10px;">That's it.</div></div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.2 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b4-ad2" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">DITCH THE<br>SPREADSHEETS.<br><span>SERIOUSLY.</span></div>
+      <div class="comparison">
+        <div class="comp-row"><span class="comp-icon-bad">✗</span><span class="comp-bad">Manual CSV exports</span></div>
+        <div class="comp-row"><span class="comp-icon-bad">✗</span><span class="comp-bad">Reformatting data for each platform</span></div>
+        <div class="comp-row"><span class="comp-icon-bad">✗</span><span class="comp-bad">Waiting days for lists to go live</span></div>
+        <div class="comp-row"><span class="comp-icon-good">✓</span><span class="comp-good">Real-time sync to 200+ platforms</span></div>
+        <div class="comp-row"><span class="comp-icon-good">✓</span><span class="comp-good">Audience live in seconds</span></div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.2 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b4-ad2" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:38px;">DITCH THE<br>SPREADSHEETS.<br><span>SERIOUSLY.</span></div>
+      <div class="comparison">
+        <div class="comp-row" style="font-size:10px;"><span class="comp-icon-bad">✗</span><span class="comp-bad">Manual CSV exports</span></div>
+        <div class="comp-row" style="font-size:10px;"><span class="comp-icon-bad">✗</span><span class="comp-bad">Waiting days for lists</span></div>
+        <div class="comp-row" style="font-size:10px;"><span class="comp-icon-good">✓</span><span class="comp-good">Real-time sync to 200+ platforms</span></div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.3 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b4-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">YOUR AUDIENCE.<br>LIVE IN YOUR<br><span>AD ACCOUNT.</span><br>IN SECONDS.</div>
+      <div class="feature-list">
+        <div class="feature">No CSV exports</div>
+        <div class="feature">No manual uploads</div>
+        <div class="feature">No dev required</div>
+        <div class="feature">200+ integrations</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.3 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b4-ad3" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:34px;">YOUR AUDIENCE.<br>LIVE IN YOUR<br><span>AD ACCOUNT.</span><br>IN SECONDS.</div>
+      <div class="feature-list">
+        <div class="feature" style="font-size:10px;">No CSV exports</div>
+        <div class="feature" style="font-size:10px;">No manual uploads</div>
+        <div class="feature" style="font-size:10px;">200+ integrations</div>
+      </div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.4 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b4-ad4" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline">GREAT DATA<br>MEANS NOTHING<br>IF IT TAKES<br>3 DAYS TO USE IT.</div>
+      <div class="sub">Retarget IQ pushes directly into Meta, Google, HubSpot, Salesforce, GoHighLevel — in real time. You build it. You hit sync. It's live.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.4 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b4-ad4" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div class="headline" style="font-size:36px;">GREAT DATA<br>MEANS NOTHING<br>IF IT TAKES<br>3 DAYS TO USE IT.</div>
+      <div class="sub" style="font-size:11px;">Build it. Hit sync. It's live. That's it.</div>
+      <div class="cta-btn">BOOK A DEMO →</div>
+    </div>
+  </div>
+
+  <!-- 4.5 Square -->
+  <div>
+    <div class="format-label">1:1 FEED</div>
+    <div class="ad ad-1x1 b4-ad5">
+      <div class="left-bar"></div>
+      <div class="content">
+        <div class="brand">Retarget IQ</div>
+        <div>
+          <div class="headline">ONE PLATFORM.<br>ALL YOUR<br>CHANNELS.<br><span>ACTUALLY</span><br>WORKING.</div>
+          <div class="sub">Real-time sync into every tool you already use. Zero manual work.</div>
+        </div>
+        <div class="cta-btn">BOOK A DEMO →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4.5 Vertical -->
+  <div>
+    <div class="format-label">9:16 STORY</div>
+    <div class="ad ad-9x16 b4-ad5">
+      <div class="left-bar"></div>
+      <div class="content">
+        <div class="brand">Retarget IQ</div>
+        <div>
+          <div class="headline" style="font-size:34px;">ONE PLATFORM.<br>ALL YOUR<br>CHANNELS.<br><span>ACTUALLY</span><br>WORKING.</div>
+          <div class="sub" style="font-size:10px;">Real-time sync. Zero manual work.</div>
+        </div>
+        <div class="cta-btn">BOOK A DEMO →</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.addEventListener('load', function() {
+  // Find every direct child div inside .ads-grid that contains an .ad
+  const adContainers = document.querySelectorAll('.ads-grid > div');
+
+  adContainers.forEach(function(container, i) {
+    const adEl = container.querySelector('.ad');
+    if (!adEl) return;
+
+    // Get format label text for filename
+    const formatLabel = container.querySelector('.format-label');
+    const formatText = formatLabel ? formatLabel.textContent.trim().replace(/[^a-z0-9]/gi, '_') : 'ad';
+
+    // Get section label for body name
+    let sectionEl = container.closest('.ads-grid').previousElementSibling;
+    while (sectionEl && !sectionEl.classList.contains('section-label')) {
+      sectionEl = sectionEl.previousElementSibling;
+    }
+    const sectionText = sectionEl ? sectionEl.textContent.trim().replace(/[^a-z0-9]/gi, '_').substring(0, 30) : 'body';
+
+    const filename = `retargetiq_${sectionText}_${formatText}_${i+1}.png`;
+
+    // Wrap in .ad-wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'ad-wrapper';
+    container.insertBefore(wrapper, container.firstChild);
+    wrapper.appendChild(adEl);
+
+    // Create download button
+    const btn = document.createElement('button');
+    btn.className = 'download-btn';
+    btn.textContent = '⬇ Download';
+    wrapper.appendChild(btn);
+
+    btn.addEventListener('click', function() {
+      btn.textContent = 'Rendering...';
+      btn.style.opacity = '1';
+      html2canvas(adEl, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: null,
+        logging: false
+      }).then(function(canvas) {
+        const link = document.createElement('a');
+        link.download = filename;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        btn.textContent = '✓ Downloaded!';
+        setTimeout(function() {
+          btn.textContent = '⬇ Download';
+          btn.style.opacity = '';
+        }, 2000);
+      }).catch(function() {
+        btn.textContent = '⬇ Download';
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>
