@@ -11,8 +11,8 @@
     position: absolute;
     top: 28px; right: 6px;
     background: rgba(0,0,0,0.88);
-    color: #FFE034;
-    border: 1.5px solid #FFE034;
+    color: #1AAFFF;
+    border: 1.5px solid #1AAFFF;
     font-family: 'Barlow', sans-serif;
     font-size: 10px; font-weight: 700;
     letter-spacing: 1px; text-transform: uppercase;
@@ -21,7 +21,7 @@
     transition: opacity 0.2s; white-space: nowrap;
   }
   .ad-wrapper:hover .download-btn { opacity: 1; }
-  .download-btn:hover { background: #FFE034; color: #000; }
+  .download-btn:hover { background: #1AAFFF; color: #000; }
 </style>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap');
@@ -31,11 +31,15 @@
   :root {
     --black: #0a0a0a;
     --white: #ffffff;
-    --yellow: #FFE034;
-    --red: #FF3B3B;
-    --blue: #1AAFFF;
+    --cyan: #1AAFFF;        /* Retarget IQ primary brand color */
+    --navy: #0D1B2A;        /* Retarget IQ dark navy */
+    --blue-mid: #0077B6;    /* Retarget IQ secondary blue */
+    --yellow: #1AAFFF;      /* mapped to brand cyan */
+    --red: #0D1B2A;         /* mapped to brand navy */
+    --blue: #1AAFFF;        /* brand cyan */
     --gray: #1a1a1a;
     --mid: #2a2a2a;
+    --light-gray: #F4F6F8;  /* light bg option */
   }
 
   body {
@@ -137,7 +141,7 @@
     line-height: 1.5;
   }
   .b1-ad1 .cta-btn {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -159,12 +163,12 @@
 
   /* Ad 1.2 */
   .b1-ad2 {
-    background: var(--white);
+    background: #F4F6F8;
     padding: 0;
     position: relative;
   }
   .b1-ad2 .top-bar {
-    background: var(--red);
+    background: #0D1B2A;
     padding: 12px 20px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 16px;
@@ -185,7 +189,7 @@
     color: var(--black);
     margin-bottom: 8px;
   }
-  .b1-ad2 .big-number span { color: var(--red); }
+  .b1-ad2 .big-number span { color: #1AAFFF; }
   .b1-ad2 .sub {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
@@ -210,7 +214,7 @@
 
   /* Ad 1.3 */
   .b1-ad3 {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a00 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #0a1628 100%);
     padding: 26px;
     position: relative;
     overflow: hidden;
@@ -222,12 +226,12 @@
     top: -20px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 160px;
-    color: rgba(255,224,52,0.06);
+    color: rgba(26,175,255,0.06);
     line-height: 1;
     pointer-events: none;
   }
   .b1-ad3 .tag {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -273,7 +277,7 @@
   }
   .b1-ad4 .accent-bar {
     width: 6px;
-    background: var(--yellow);
+    background: #1AAFFF;
     position: absolute;
     left: 0;
     top: 0;
@@ -313,7 +317,7 @@
     font-family: 'Barlow', sans-serif;
   }
   .b1-ad4 .cta-btn {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -327,7 +331,7 @@
 
   /* Ad 1.5 */
   .b1-ad5 {
-    background: var(--red);
+    background: #0D1B2A;
     padding: 28px;
     position: relative;
     overflow: hidden;
@@ -361,8 +365,8 @@
     z-index: 2;
   }
   .b1-ad5 .cta-btn {
-    background: var(--white);
-    color: var(--red);
+    background: #1AAFFF;
+    color: #0D1B2A;
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
     font-size: 12px;
@@ -472,7 +476,7 @@
     margin-bottom: 0;
   }
   .b2-ad2 .bottom {
-    background: var(--yellow);
+    background: #1AAFFF;
     padding: 16px 22px;
     display: flex;
     align-items: center;
@@ -508,7 +512,7 @@
     pointer-events: none;
   }
   .b2-ad3 .tag {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -554,7 +558,7 @@
     color: var(--yellow);
   }
   .b2-ad3 .cta-btn {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -620,7 +624,7 @@
 
   /* Ad 2.5 */
   .b2-ad5 {
-    background: var(--yellow);
+    background: #1AAFFF;
     padding: 26px;
     position: relative;
     overflow: hidden;
@@ -637,7 +641,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 52px;
     line-height: 0.95;
-    color: var(--black);
+    color: #0D1B2A;
     margin-bottom: 14px;
     position: relative;
     z-index: 2;
@@ -654,7 +658,7 @@
     font-family: 'Barlow', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: var(--black);
+    color: #0D1B2A;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -665,8 +669,8 @@
     font-weight: 900;
   }
   .b2-ad5 .cta-btn {
-    background: var(--black);
-    color: var(--yellow);
+    background: #0D1B2A;
+    color: #ffffff;
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
     font-size: 12px;
@@ -719,7 +723,7 @@
     border-left: 3px solid var(--yellow);
   }
   .b3-ad1 .cta-btn {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -734,7 +738,7 @@
 
   /* Ad 3.2 */
   .b3-ad2 {
-    background: var(--white);
+    background: #ffffff;
     padding: 26px;
     position: relative;
   }
@@ -745,7 +749,7 @@
     color: var(--black);
     margin-bottom: 14px;
   }
-  .b3-ad2 .headline span { color: var(--red); }
+  .b3-ad2 .headline span { color: #1AAFFF; }
   .b3-ad2 .sub {
     font-family: 'Barlow', sans-serif;
     font-size: 13px;
@@ -773,7 +777,7 @@
   .b3-ad2 .channel-dot {
     width: 8px;
     height: 8px;
-    background: var(--red);
+    background: #0D1B2A;
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -863,7 +867,7 @@
     line-height: 1.5;
   }
   .b3-ad4 .bottom-strip {
-    background: var(--yellow);
+    background: #1AAFFF;
     padding: 14px 22px;
     display: flex;
     align-items: center;
@@ -883,7 +887,7 @@
 
   /* Ad 3.5 */
   .b3-ad5 {
-    background: var(--red);
+    background: #0D1B2A;
     padding: 26px;
     position: relative;
     overflow: hidden;
@@ -915,8 +919,8 @@
     z-index: 2;
   }
   .b3-ad5 .cta-btn {
-    background: var(--white);
-    color: var(--red);
+    background: #1AAFFF;
+    color: #0D1B2A;
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
     font-size: 12px;
@@ -993,7 +997,7 @@
     line-height: 1.4;
   }
   .b4-ad1 .cta-btn {
-    background: var(--yellow);
+    background: #1AAFFF;
     color: var(--black);
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
@@ -1008,7 +1012,7 @@
 
   /* Ad 4.2 */
   .b4-ad2 {
-    background: var(--white);
+    background: #F4F6F8;
     padding: 26px;
     position: relative;
   }
@@ -1019,7 +1023,7 @@
     color: var(--black);
     margin-bottom: 16px;
   }
-  .b4-ad2 .headline span { color: var(--red); }
+  .b4-ad2 .headline span { color: #0D1B2A; }
   .b4-ad2 .comparison {
     display: flex;
     flex-direction: column;
@@ -1042,7 +1046,7 @@
     color: var(--black);
   }
   .b4-ad2 .comp-icon-bad { color: #ccc; font-size: 14px; }
-  .b4-ad2 .comp-icon-good { color: var(--red); font-size: 14px; }
+  .b4-ad2 .comp-icon-good { color: #1AAFFF; font-size: 14px; }
   .b4-ad2 .cta-btn {
     background: var(--black);
     color: var(--white);
@@ -1122,7 +1126,7 @@
 
   /* Ad 4.4 */
   .b4-ad4 {
-    background: var(--yellow);
+    background: #1AAFFF;
     padding: 26px;
     position: relative;
     overflow: hidden;
@@ -1139,7 +1143,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 52px;
     line-height: 0.95;
-    color: var(--black);
+    color: #0D1B2A;
     margin-bottom: 14px;
     position: relative;
     z-index: 2;
@@ -1147,15 +1151,15 @@
   .b4-ad4 .sub {
     font-family: 'Barlow', sans-serif;
     font-size: 13px;
-    color: rgba(0,0,0,0.7);
+    color: rgba(13,27,42,0.8);
     line-height: 1.5;
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
   }
   .b4-ad4 .cta-btn {
-    background: var(--black);
-    color: var(--yellow);
+    background: #0D1B2A;
+    color: #ffffff;
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
     font-size: 12px;
@@ -1333,7 +1337,7 @@
   .safe-zone-toggle {
     position: fixed;
     top: 20px; right: 20px;
-    background: #FFE034;
+    background: #1AAFFF;
     color: #000;
     font-family: 'Barlow', sans-serif;
     font-weight: 900;
